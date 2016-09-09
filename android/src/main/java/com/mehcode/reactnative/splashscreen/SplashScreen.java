@@ -2,6 +2,7 @@ package com.mehcode.reactnative.splashscreen;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.widget.ImageView;
 
 import java.lang.ref.WeakReference;
 
@@ -24,8 +25,12 @@ public class SplashScreen {
             public void run() {
                 if (!activity.isFinishing()) {
                     mSplashDialog = new Dialog(activity, R.style.RNSplashScreen_SplashTheme);
+                    ImageView imageView = new ImageView(activity);
+                    imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
+                    imageView.setImageResource(R.drawable.splash);
+                    mSplashDialog.setContentView(imageView);
                     mSplashDialog.setCancelable(false);
-                    
+
                     if (!mSplashDialog.isShowing()) {
                         mSplashDialog.show();
                     }
@@ -51,3 +56,4 @@ public class SplashScreen {
         });
     }
 }
+
