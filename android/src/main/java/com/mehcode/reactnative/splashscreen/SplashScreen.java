@@ -17,7 +17,7 @@ public class SplashScreen {
         if (activity == null) return;
 
         // Store weak-reference to showing activity (in case we try to hide too early)
-        // NOTE: For instance in direct execution of index.android.js
+        // NOTE: For instance in direct execution of file index.android.js
         mActivity = new WeakReference<Activity>(activity);
 
         activity.runOnUiThread(new Runnable() {
